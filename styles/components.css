@@ -6,36 +6,6 @@
 /* ============================================================
    NAVBAR COMPONENT
    ============================================================ */
-.nav-logo {
-  width: 36px;
-  height: 36px;
-  background: transparent !important;
-  border: 1.5px solid rgba(31,41,51,0.15);
-  border-radius: 8px;
-  padding: 6px 12px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  color: #F43F5E !important;
-  text-decoration: none;
-  transition: all 0.25s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.nav-logo:hover {
-  border-color: #F43F5E;
-  color: #F43F5E !important;
-  transform: scale(1.04);
-}
-body.dark .nav-logo {
-  border-color: rgba(255,255,255,0.15);
-  color: #F43F5E !important;
-}
-body.dark .nav-logo:hover {
-  border-color: #F43F5E;
-  color: #F43F5E !important;
-}
 
 .nav-link {
   font-family: var(--font-body);
@@ -1977,4 +1947,41 @@ body.dark .contact-link-btn > *:not(svg) {
 .contact-link-btn > *:not(svg) {
   color: #FFFFFF !important;
   opacity: 1 !important;
+}
+
+.nav-logo {
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.08) !important;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #FFFFFF !important;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.nav-logo:hover {
+  transform: scale(0.93) !important;
+  background: rgba(255,241,242,0.12) !important;
+  box-shadow: 0 0 12px rgba(244,63,94,0.4), 0 0 24px rgba(244,63,94,0.15) !important;
+  color: #FFFFFF !important;
+}
+body.dark .nav-logo {
+  background: rgba(255,255,255,0.07) !important;
+  color: #FFFFFF !important;
+}
+body.dark .nav-logo:hover {
+  transform: scale(0.93) !important;
+  background: rgba(255,241,242,0.1) !important;
+  box-shadow: 0 0 14px rgba(244,63,94,0.5), 0 0 28px rgba(244,63,94,0.2) !important;
+  color: #FFFFFF !important;
 }
