@@ -448,3 +448,31 @@ footer {
     justify-content: center;
   }
 }
+
+/* ============================================================
+   ON-CONTACT NAVBAR STATE
+   ============================================================ */
+nav.scrolled.on-contact {
+  background: rgba(17,17,17,0.85) !important;
+  backdrop-filter: saturate(180%) blur(28px) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(28px) !important;
+  border-bottom: 0.5px solid rgba(255,255,255,0.08) !important;
+}
+nav.scrolled.on-contact .nav-links a {
+  color: rgba(255,255,255,0.7) !important;
+}
+nav.scrolled.on-contact .nav-links a:hover,
+nav.scrolled.on-contact .nav-links a.active {
+  color: #FFFFFF !important;
+}
+body.dark nav.scrolled.on-contact {
+  background: rgba(248,248,248,0.85) !important;
+  border-bottom: 0.5px solid rgba(0,0,0,0.08) !important;
+}
+body.dark nav.scrolled.on-contact .nav-links a {
+  color: rgba(0,0,0,0.6) !important;
+}
+body.dark nav.scrolled.on-contact .nav-links a:hover,
+body.dark nav.scrolled.on-contact .nav-links a.active {
+  color: #0A0A0A !important;
+}

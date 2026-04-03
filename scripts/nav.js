@@ -22,8 +22,22 @@
 
   // ── Frosted glass ─────────────────────────────────────────────────────────
   function updateNavStyle() {
-    const scrolled = window.scrollY > SCROLL_THRESHOLD;
-    navbar.classList.toggle('scrolled', scrolled);
+    const scrollY = window.scrollY;
+    if (!navbar) return;
+    if (scrollY > 60) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+    const contact = document.querySelector('#contact-wrap, [id*="contact"], section:last-of-type');
+    if (contact) {
+      const rect = contact.getBoundingClientRect();
+      if (rect.top < 100) {
+        navbar.classList.add('on-contact');
+      } else {
+        navbar.classList.remove('on-contact');
+      }
+    }
   }
 
   // ── Reading progress bar ─────────────────────────────────────────────────

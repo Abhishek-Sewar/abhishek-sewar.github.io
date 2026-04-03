@@ -7,25 +7,34 @@
    NAVBAR COMPONENT
    ============================================================ */
 .nav-logo {
+  width: 36px;
+  height: 36px;
+  background: transparent !important;
+  border: 1.5px solid rgba(31,41,51,0.15);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #F43F5E !important;
+  text-decoration: none;
+  transition: all 0.25s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  background: linear-gradient(135deg, var(--color-accent) 0%, #E11D48 100%);
-  border-radius: var(--radius-md);
-  font-family: var(--font-display);
-  font-size: var(--text-base);
-  font-weight: 600;
-  color: var(--color-inverse);
-  letter-spacing: -0.5px;
-  transition: transform var(--dur-normal) var(--ease-spring), box-shadow var(--dur-normal) var(--ease-out);
-  flex-shrink: 0;
 }
-
 .nav-logo:hover {
-  transform: scale(1.07);
-  box-shadow: 0 4px 16px rgba(244, 63, 94, 0.35);
+  border-color: #F43F5E;
+  color: #F43F5E !important;
+  transform: scale(1.04);
+}
+body.dark .nav-logo {
+  border-color: rgba(255,255,255,0.15);
+  color: #F43F5E !important;
+}
+body.dark .nav-logo:hover {
+  border-color: #F43F5E;
+  color: #F43F5E !important;
 }
 
 .nav-link {
@@ -1432,34 +1441,29 @@ body.dark .stat-divider {
 }
 
 .btn-submit {
-  background-color: rgba(244, 63, 94, 0.12);
-  color: rgba(244, 63, 94, 0.4);
-  border: 1px solid rgba(244, 63, 94, 0.15);
-  border-radius: var(--radius-md);
-  padding: var(--space-4) var(--space-6);
-  font-size: var(--text-base);
-  font-weight: 500;
   width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(244,63,94,0.3);
+  background: transparent !important;
+  color: rgba(244,63,94,0.5) !important;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: all 0.3s ease;
   cursor: not-allowed;
-  transition:
-    background-color var(--dur-normal) var(--ease-out),
-    color var(--dur-normal) var(--ease-out),
-    border-color var(--dur-normal) var(--ease-out),
-    box-shadow var(--dur-normal) var(--ease-out),
-    transform var(--dur-normal) var(--ease-spring);
-  letter-spacing: -0.01em;
 }
-
 .btn-submit.ready {
-  background: linear-gradient(135deg, #F43F5E 0%, #E11D48 100%);
-  color: var(--color-inverse);
-  border-color: transparent;
-  box-shadow: 0 4px 20px rgba(244, 63, 94, 0.35);
+  border-color: #F43F5E;
+  color: #F43F5E !important;
+  background: transparent !important;
+  cursor: pointer;
+  box-shadow: none;
 }
-
 .btn-submit.ready:hover {
-  box-shadow: 0 6px 28px rgba(244, 63, 94, 0.50);
-  transform: translateY(-1px);
+  background: #F43F5E !important;
+  color: #FFFFFF !important;
+  transform: scale(1.02);
 }
 
 /* Thank you message */
@@ -1852,22 +1856,14 @@ body.dark .contact-link-btn svg {
 }
 
 .contact-link-btn {
-  transition: all 0.25s ease;
-}
-.contact-link-btn:hover {
-  border-color: #F43F5E !important;
-  color: #F43F5E !important;
-  background: rgba(244,63,94,0.06) !important;
-  transform: translateY(-2px) !important;
+  transition: color 0.2s ease !important;
+  padding: 12px 0 !important;
+  text-decoration: none !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
 }
 .contact-link-btn:hover svg {
   stroke: #F43F5E !important;
-}
-body.dark .contact-link-btn:hover {
-  border-color: #F43F5E !important;
-  color: #F43F5E !important;
-  background: rgba(244,63,94,0.08) !important;
-  transform: translateY(-2px) !important;
 }
 
 #contact-wrap .footer-name,
@@ -1887,26 +1883,98 @@ footer .footer-links a:hover {
   color: #F43F5E !important;
 }
 
-.contact-link-btn {
+.contact-link-btn,
+.contact-link-btn * {
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+  opacity: 1 !important;
+}
+.contact-link-btn:hover,
+.contact-link-btn:hover * {
+  color: #F43F5E !important;
+  stroke: #F43F5E !important;
+}
+body.dark .contact-link-btn,
+body.dark .contact-link-btn * {
+  color: #1F2933 !important;
+  stroke: #1F2933 !important;
+  opacity: 1 !important;
+}
+body.dark .contact-link-btn:hover,
+body.dark .contact-link-btn:hover * {
+  color: #F43F5E !important;
+  stroke: #F43F5E !important;
+}
+
+a.contact-link-btn,
+a.contact-link-btn:link,
+a.contact-link-btn:visited {
+  color: #FFFFFF !important;
+  opacity: 1 !important;
+}
+a.contact-link-btn svg,
+a.contact-link-btn * {
+  stroke: #FFFFFF !important;
+  color: #FFFFFF !important;
+  opacity: 1 !important;
+}
+a.contact-link-btn:hover,
+a.contact-link-btn:hover * {
+  color: #F43F5E !important;
+  stroke: #F43F5E !important;
+}
+body.dark a.contact-link-btn,
+body.dark a.contact-link-btn:link,
+body.dark a.contact-link-btn:visited {
+  color: #1F2933 !important;
+  opacity: 1 !important;
+}
+body.dark a.contact-link-btn svg,
+body.dark a.contact-link-btn * {
+  stroke: #1F2933 !important;
+  color: #1F2933 !important;
+}
+
+.contact-link-btn,
+.contact-link-btn:link,
+.contact-link-btn:visited,
+body.dark .contact-link-btn,
+body.dark .contact-link-btn:link,
+body.dark .contact-link-btn:visited {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
-  color: #1F2933 !important;
-  transition: color 0.2s ease !important;
-  padding: 12px 0 !important;
+  outline: none !important;
 }
-.contact-link-btn:hover,
-.contact-link-btn:hover svg,
+
+body.dark a.contact-link-btn,
+body.dark a.contact-link-btn:link,
+body.dark a.contact-link-btn:visited,
+body.dark .contact-link-btn,
+body.dark .contact-link-btn * {
+  color: #0A0A0A !important;
+  stroke: #0A0A0A !important;
+  opacity: 1 !important;
+  background: transparent !important;
+  border: none !important;
+}
+body.dark a.contact-link-btn:hover,
 body.dark .contact-link-btn:hover,
-body.dark .contact-link-btn:hover svg {
+body.dark .contact-link-btn:hover * {
   color: #F43F5E !important;
   stroke: #F43F5E !important;
-  background: transparent !important;
-  border: none !important;
-  transform: none !important;
 }
-body.dark .contact-link-btn {
-  background: transparent !important;
-  border: none !important;
-  color: #1F2933 !important;
+
+body.dark .contact-link-btn span,
+body.dark .contact-link-btn > span,
+body.dark .contact-link-btn p,
+body.dark .contact-link-btn > *:not(svg) {
+  color: #0A0A0A !important;
+  opacity: 1 !important;
+}
+.contact-link-btn span,
+.contact-link-btn > span,
+.contact-link-btn > *:not(svg) {
+  color: #FFFFFF !important;
+  opacity: 1 !important;
 }

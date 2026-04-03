@@ -206,6 +206,14 @@
         { label: 'FastAPI',      group: 'mlops',    years: 4, projects: 3  },
         { label: 'MLflow',       group: 'mlops',    years: 3, projects: 2  },
         { label: 'Flask',        group: 'mlops',    years: 4, projects: 4  },
+        { label: 'NumPy',        group: 'ml',       years: 4, projects: 8  },
+        { label: 'Pandas',       group: 'ml',       years: 4, projects: 8  },
+        { label: 'CUDA',         group: 'ml',       years: 2, projects: 3  },
+        { label: 'Streamlit',    group: 'mlops',    years: 2, projects: 4  },
+        { label: 'Gazebo',       group: 'robotics', years: 2, projects: 2  },
+        { label: 'Spark',        group: 'mlops',    years: 2, projects: 2  },
+        { label: 'Keras',        group: 'ml',       years: 3, projects: 4  },
+        { label: 'Transformers', group: 'llm',      years: 2, projects: 4  },
       ];
 
       const CONNECTIONS = [
@@ -218,6 +226,11 @@
         ['Flask','FastAPI'],['MLflow','Docker'],['Python','PyTorch'],
         ['Python','TensorFlow'],['Python','Flask'],['Python','FastAPI'],
         ['GCP','MLflow'],['Scikit-learn','Python'],
+        ['NumPy','Pandas'],['NumPy','Python'],['Pandas','Python'],
+        ['CUDA','PyTorch'],['CUDA','TensorFlow'],
+        ['Streamlit','Flask'],['Streamlit','MLflow'],
+        ['Gazebo','ROS2'],['Spark','Docker'],
+        ['Keras','TensorFlow'],['Transformers','HuggingFace'],['Transformers','LangChain'],
       ];
 
       function resize() {
