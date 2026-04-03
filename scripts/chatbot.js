@@ -422,6 +422,7 @@
         input.value = '';
         input.style.height = 'auto';
         sendBtn.disabled = true;
+        appendMessage('bot', '🔓 Override accepted. Hey Abhishek, rate limits? Never heard of them.');
         return;
       }
 
