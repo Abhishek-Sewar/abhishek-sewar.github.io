@@ -3,7 +3,8 @@
   style.textContent = `
     * { cursor: none !important; }
     a, button, .btn, .proj-card, .filter-btn, .nav-logo,
-    .contact-link, .spec-card, .tag { cursor: pointer !important; }
+    .contact-link, .spec-card, .tag,
+    .edu-card, .edu-card *, .tl-card, .tl-card * { cursor: pointer !important; }
     #cursor {
       position: fixed;
       top: 0;
