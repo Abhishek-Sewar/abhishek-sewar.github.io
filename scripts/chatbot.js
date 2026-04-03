@@ -363,6 +363,7 @@
     let isOpen = false;
     let isBusy = false;
     let welcomed = false;
+    let adminKey = null;
 
     function open() {
       if (isOpen) return;
@@ -415,6 +416,15 @@
       const text = input.value.trim();
       if (!text || isBusy) return;
 
+      // Hidden admin command — silently store key, never show in chat
+      if (text.startsWith('/admin ')) {
+        adminKey = text.slice(7).trim();
+        input.value = '';
+        input.style.height = 'auto';
+        sendBtn.disabled = true;
+        return;
+      }
+
       isBusy = true;
       input.value = '';
       input.style.height = 'auto';
@@ -424,9 +434,12 @@
       showTyping();
 
       try {
+        const headers = { 'Content-Type': 'application/json' };
+        if (adminKey) headers['x-admin-key'] = adminKey;
+
         const res = await fetch(API_URL, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers,
           body: JSON.stringify({ message: text }),
         });
         const data = await res.json();
