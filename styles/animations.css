@@ -1,0 +1,340 @@
+/* ============================================================
+   ANIMATIONS.CSS — Keyframes, entrance animations, micro-interactions
+   Uses only variables defined in base.css
+   All animations use transform and opacity only (60fps)
+   IntersectionObserver classes are in components.css (.reveal/.visible)
+   ============================================================ */
+
+/* ============================================================
+   PAGE ENTRANCE SEQUENCE (controlled by hero.js)
+   ============================================================ */
+.entrance-ready .hero-entrance {
+  /* JS will add .entered class with individual delays */
+}
+
+.hero-entrance.entered {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Specific entrance variants */
+.hero-entrance--scale {
+  opacity: 0;
+  transform: scale(0.85);
+  transition:
+    opacity var(--dur-slow) var(--ease-out-expo),
+    transform var(--dur-slow) var(--ease-spring);
+}
+
+.hero-entrance--scale.entered {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-entrance--fade {
+  opacity: 0;
+  transition: opacity var(--dur-slower) var(--ease-out);
+}
+
+.hero-entrance--fade.entered {
+  opacity: 1;
+}
+
+/* ============================================================
+   TILT PARALLAX (applied by animations.js)
+   ============================================================ */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform var(--dur-normal) var(--ease-spring);
+  will-change: transform;
+}
+
+/* ============================================================
+   MAGNETIC BUTTON (applied by animations.js)
+   ============================================================ */
+.magnetic {
+  transition: transform var(--dur-normal) var(--ease-spring);
+  will-change: transform;
+}
+
+/* ============================================================
+   SKILL BAR ANIMATION
+   Triggered by IntersectionObserver in animations.js
+   ============================================================ */
+.skill-bar-fill {
+  will-change: width;
+}
+
+.skill-bar-fill.animate {
+  /* Width is set via inline style + transition in components.css */
+}
+
+/* ============================================================
+   STAGGERED TAG CLOUD ENTRANCE
+   ============================================================ */
+.tool-tag {
+  opacity: 0;
+  transform: scale(0.8);
+  transition:
+    opacity var(--dur-medium) var(--ease-spring),
+    transform var(--dur-medium) var(--ease-spring),
+    color var(--dur-normal) var(--ease-out),
+    background-color var(--dur-normal) var(--ease-out),
+    border-color var(--dur-normal) var(--ease-out);
+}
+
+.tool-tag.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ============================================================
+   SPEC CARD STAGGER
+   ============================================================ */
+.spec-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--dur-medium) var(--ease-out-expo),
+    transform var(--dur-medium) var(--ease-spring),
+    box-shadow var(--dur-normal) var(--ease-out),
+    border-color var(--dur-normal) var(--ease-out);
+}
+
+.spec-card.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Keep hover effects active after reveal */
+.spec-card.revealed:hover {
+  transform: translateY(-3px);
+}
+
+/* ============================================================
+   TIMELINE ENTRY ANIMATION
+   ============================================================ */
+.timeline-entry {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition:
+    opacity var(--dur-slow) var(--ease-out-expo),
+    transform var(--dur-slow) var(--ease-spring);
+}
+
+.timeline-entry.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ============================================================
+   EDUCATION CARD ANIMATION
+   ============================================================ */
+.edu-card {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--dur-medium) var(--ease-out-expo),
+    transform var(--dur-medium) var(--ease-spring),
+    box-shadow var(--dur-normal) var(--ease-out);
+}
+
+.edu-card.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.edu-card.revealed:hover {
+  transform: translateY(-3px);
+}
+
+/* ============================================================
+   PROJECT CARD ANIMATION
+   ============================================================ */
+.proj-card {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity var(--dur-slow) var(--ease-out-expo),
+    transform var(--dur-slow) var(--ease-spring),
+    box-shadow var(--dur-medium) var(--ease-out);
+}
+
+.proj-card.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.proj-card.revealed:hover {
+  transform: translateY(-4px) rotate3d(0.5, 0.5, 0, 1deg);
+}
+
+.proj-featured {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--dur-slower) var(--ease-out-expo),
+    transform var(--dur-slower) var(--ease-spring),
+    box-shadow var(--dur-medium) var(--ease-out);
+}
+
+.proj-featured.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   ABOUT SECTION ANIMATIONS
+   ============================================================ */
+.about-avatar-card {
+  opacity: 0;
+  transform: translateY(24px) scale(0.97);
+  transition:
+    opacity var(--dur-slow) var(--ease-out-expo),
+    transform var(--dur-slow) var(--ease-spring);
+}
+
+.about-avatar-card.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.about-manifesto {
+  opacity: 0;
+  transform: translateX(24px);
+  transition:
+    opacity var(--dur-slow) var(--ease-out-expo),
+    transform var(--dur-slow) var(--ease-spring);
+}
+
+.about-manifesto.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.currently-pill {
+  opacity: 0;
+  transform: scale(0.85) translateY(4px);
+  transition:
+    opacity var(--dur-medium) var(--ease-spring),
+    transform var(--dur-medium) var(--ease-spring),
+    background-color var(--dur-normal) var(--ease-out),
+    color var(--dur-normal) var(--ease-out),
+    border-color var(--dur-normal) var(--ease-out);
+}
+
+.currently-pill.revealed {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.currently-pill.revealed:hover {
+  background-color: var(--color-accent-tint);
+  color: var(--color-accent);
+  border-color: rgba(244, 63, 94, 0.2);
+}
+
+/* ============================================================
+   SECTION HEADING ANIMATIONS
+   ============================================================ */
+.section-header {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--dur-slow) var(--ease-out-expo),
+    transform var(--dur-slow) var(--ease-spring);
+}
+
+.section-header.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   CONTACT FORM ANIMATION
+   ============================================================ */
+.contact-left {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition:
+    opacity var(--dur-slow) var(--ease-out-expo),
+    transform var(--dur-slow) var(--ease-spring);
+}
+
+.contact-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contact-right {
+  opacity: 0;
+  transform: translateX(24px);
+  transition:
+    opacity var(--dur-slow) var(--ease-out-expo),
+    transform var(--dur-slow) var(--ease-spring);
+}
+
+.contact-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ============================================================
+   UTILITY — will-change hints
+   Applied to frequently animated elements
+   ============================================================ */
+.proj-card,
+.spec-card,
+.edu-card,
+.tool-tag,
+.btn,
+.nav-link {
+  will-change: transform;
+}
+
+/* ============================================================
+   REDUCED MOTION OVERRIDES
+   Ensures all transform/opacity transitions are instant
+   when user prefers reduced motion (in addition to base.css reset)
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .hero-entrance,
+  .hero-entrance--scale,
+  .hero-entrance--fade,
+  .reveal,
+  .tool-tag,
+  .spec-card,
+  .timeline-entry,
+  .edu-card,
+  .proj-card,
+  .proj-featured,
+  .about-avatar-card,
+  .about-manifesto,
+  .currently-pill,
+  .section-header,
+  .contact-left,
+  .contact-right {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .neural-float,
+  .neural-blob-1,
+  .neural-blob-2,
+  .neural-blob-3,
+  .neural-blob-4,
+  .proj-featured-arc,
+  .scroll-chevron {
+    animation: none !important;
+  }
+}
+
+/* ============================================================
+   PAGE FADE-IN ON LOAD
+   ============================================================ */
+body { animation: page-fade-in 0.4s ease forwards; }
+@keyframes page-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

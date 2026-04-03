@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Abhishek Sewar · AI/ML Engineer & MS Artificial Intelligence candidate at Northeastern University. Building intelligent systems from raw data to production decisions." />
+  <meta name="author" content="Abhishek Sewar" />
+  <meta property="og:title" content="Abhishek Sewar · AI / ML Engineer" />
+  <meta property="og:description" content="Building intelligent systems from raw data to production decisions." />
+  <meta property="og:type" content="website" />
+  <title>Abhishek Sewar · AI / ML Engineer</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet"/>
+
+  <!-- Stylesheets (order matters) -->
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/animations.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CURSOR
+  ═══════════════════════════════════════════════════════ -->
+  <div id="cursor" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       READING PROGRESS BAR
+  ═══════════════════════════════════════════════════════ -->
+  <div id="progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════════════════ -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Abhishek Sewar — go to top">AS</a>
+
+      <ul class="nav-links" role="list" id="nav-links-list">
+        <li><a href="#about"      class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills"     class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects"   class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+        <li><a href="#contact"    class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <button class="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links-list">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <button id="theme-toggle" aria-label="Toggle dark mode" style="background:transparent;border:1.5px solid rgba(31,41,51,0.15);border-radius:8px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:all 0.2s ease;">
+        <svg id="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg id="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════════════════════ -->
+  <section id="hero" aria-label="Introduction">
+    <div class="hero-grid">
+
+      <!-- Left column -->
+      <div class="hero-left">
+
+        <!-- Name -->
+        <h1 class="hero-name hero-entrance">
+          Abhishek <span class="accent">Sewar</span>
+        </h1>
+
+        <!-- Role -->
+        <p class="hero-role hero-entrance">
+          AI / ML Engineer &nbsp;·&nbsp; MS Artificial Intelligence @ Northeastern
+        </p>
+
+        <!-- Skills ticker -->
+        <div class="ticker-wrapper hero-entrance" aria-label="Key skills" aria-live="polite">
+          <div class="ticker-inner">
+            <div class="ticker-item">LLM Systems &amp; RAG Pipelines</div>
+            <div class="ticker-item">Computer Vision &amp; Perception</div>
+            <div class="ticker-item">Agentic AI &amp; LangChain</div>
+            <div class="ticker-item">Robotics &amp; Sensor Fusion</div>
+            <div class="ticker-item">PyTorch · TensorFlow · HuggingFace</div>
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="hero-ctas hero-entrance">
+          <a href="#projects" class="btn btn-primary btn-lg" aria-label="View my work">
+            View My Work →
+          </a>
+          <a href="#contact" class="btn btn-ghost btn-lg" aria-label="Get in touch">
+            Get in Touch
+          </a>
+        </div>
+
+      </div><!-- /hero-left -->
+
+      <!-- Right column — neural network visual -->
+      <div class="hero-right hero-entrance hero-entrance--fade" aria-hidden="true">
+        <div class="neural-visual-wrapper">
+          <!-- Drifting blobs -->
+          <div class="neural-blob neural-blob-1"></div>
+          <div class="neural-blob neural-blob-2"></div>
+          <div class="neural-blob neural-blob-3"></div>
+          <div class="neural-blob neural-blob-4"></div>
+
+          <!-- Neural SVG with float animation -->
+          <div class="neural-float">
+            <img
+              src="assets/neural.svg"
+              alt="Animated neural network diagram representing AI/ML systems"
+              width="440"
+              height="440"
+              loading="eager"
+            />
+          </div>
+        </div>
+      </div><!-- /hero-right -->
+
+    </div><!-- /hero-grid -->
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <span class="scroll-label">scroll</span>
+      <div class="scroll-chevron"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       ABOUT SECTION
+  ═══════════════════════════════════════════════════════ -->
+  <section id="about" aria-label="About Abhishek Sewar">
+    <div class="section-wrapper container">
+
+      <!-- Stats bar -->
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-num" data-count="20" data-suffix="+">0</span>
+          <span class="stat-lbl">Projects Shipped</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="25" data-suffix="%">0</span>
+          <span class="stat-lbl">Latency Reduced</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="95" data-suffix="%+">0</span>
+          <span class="stat-lbl">CV Accuracy</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="0.83" data-suffix=" AUROC">0</span>
+          <span class="stat-lbl">AUROC Score</span>
+        </div>
+      </div>
+
+      <header class="section-header">
+        <span class="section-label">About</span>
+        <h2 class="section-title">The mind behind the models</h2>
+      </header>
+
+      <div class="about-grid">
+
+        <!-- Left: Avatar card -->
+        <aside class="about-avatar-card" aria-label="Profile card">
+          <div class="avatar-circle" aria-hidden="true">AS</div>
+          <p class="about-avatar-name">Abhishek Sewar</p>
+          <p class="about-avatar-title">AI / ML Engineer<br>MS Artificial Intelligence</p>
+
+          <div class="about-info-rows">
+            <div class="about-info-row">
+              <svg class="about-info-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span class="about-info-label">Location</span>
+              <span class="about-info-value">Boston, MA</span>
+            </div>
+            <div class="about-info-row">
+              <svg class="about-info-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              <span class="about-info-label">University</span>
+              <span class="about-info-value">Northeastern University</span>
+            </div>
+            <div class="about-info-row">
+              <svg class="about-info-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <span class="about-info-label">Degree</span>
+              <span class="about-info-value">MS Artificial Intelligence</span>
+            </div>
+            <div class="about-info-row">
+              <svg class="about-info-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <span class="about-info-label">GPA</span>
+              <span class="about-info-value">3.5 / 4.0</span>
+            </div>
+            <div class="about-info-row">
+              <svg class="about-info-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span class="about-info-label">Status</span>
+              <span class="about-info-value">Open to full-time roles</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Right: Manifesto -->
+        <div class="about-manifesto" aria-label="Personal statement">
+          <p>
+            My path into AI started with <strong>Mechatronics</strong>, a discipline that forced me to think about perception, control loops, and real-world robustness before I ever wrote a neural network. When a system has to actuate in the physical world, "good enough on the benchmark" doesn't cut it. That engineering mindset is the lens I bring to every ML problem I touch.
+          </p>
+          <p>
+            At Northeastern, I'm deepening that foundation by studying Transformers, Robot Perception, Cloud ML, and Responsible AI. But I'm not waiting to apply it. I build <strong>LLM pipelines that ship</strong>, computer vision systems trained to perform under variable lighting and occlusion, and robotics solutions grounded in the mathematics of state estimation. These aren't notebook experiments; they're systems designed to survive contact with production data.
+          </p>
+          <p>
+            What drives me is the gap between research and deployment. I care about <strong>clean architecture, responsible design, and closing that gap</strong>: building AI that is explainable, measurable, and useful to the humans on the other side of it. If you're working on problems that sit at that frontier, I want to be in that conversation.
+          </p>
+
+          <div class="currently-pills" aria-label="Currently">
+            <span class="currently-pill">📖 Reading: Attention Is All You Need</span>
+            <span class="currently-pill">⚙️ Building: vLLM inference server</span>
+            <span class="currently-pill">🔬 Learning: Diffusion models</span>
+            <span class="currently-pill">🟢 Open to: Full-time roles</span>
+            <span class="currently-pill">🎓 GPA: 3.5 @ Northeastern</span>
+          </div>
+        </div><!-- /about-manifesto -->
+
+      </div><!-- /about-grid -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SKILLS SECTION
+  ═══════════════════════════════════════════════════════ -->
+  <section id="skills" aria-label="Technical skills">
+    <div class="section-wrapper container">
+
+      <header class="section-header">
+        <span class="section-label">Skills</span>
+        <h2 class="section-title">Tools of the trade</h2>
+      </header>
+
+      <div class="skills-grid">
+
+        <!-- Column 1: Core ML skill bars -->
+        <div class="skills-col" aria-label="Core ML proficiency">
+          <h3 class="skills-column-title reveal">Core ML</h3>
+
+          <div class="skill-bar-item reveal reveal-delay-1">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">Python</span>
+              <span class="skill-bar-pct">96%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="96"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item reveal reveal-delay-2">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">PyTorch</span>
+              <span class="skill-bar-pct">92%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="92"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item reveal reveal-delay-3">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">TensorFlow</span>
+              <span class="skill-bar-pct">88%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="88"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item reveal reveal-delay-4">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">HuggingFace</span>
+              <span class="skill-bar-pct">90%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="90"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item reveal reveal-delay-5">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">Scikit-learn</span>
+              <span class="skill-bar-pct">85%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="85"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item reveal">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">Keras</span>
+              <span class="skill-bar-pct">82%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="82"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item reveal">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">NumPy / Pandas</span>
+              <span class="skill-bar-pct">94%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="94"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item reveal">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">OpenCV</span>
+              <span class="skill-bar-pct">88%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="88"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item reveal">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">CUDA / GPU</span>
+              <span class="skill-bar-pct">75%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-pct="75"></div>
+            </div>
+          </div>
+        </div><!-- /col-1 -->
+
+        <!-- Column 2: Specializations -->
+        <div class="skills-col" aria-label="Specialization areas">
+          <h3 class="skills-column-title reveal">Specializations</h3>
+
+          <article class="spec-card" aria-label="LLM Systems">
+            <div class="spec-card-header">
+              <div class="spec-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <h4 class="spec-card-title">LLM Systems</h4>
+            </div>
+            <p class="spec-card-tags">vLLM · LangChain · RAG</p>
+          </article>
+
+          <article class="spec-card" aria-label="Computer Vision">
+            <div class="spec-card-header">
+              <div class="spec-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <h4 class="spec-card-title">Computer Vision</h4>
+            </div>
+            <p class="spec-card-tags">OpenCV · detection · tracking</p>
+          </article>
+
+          <article class="spec-card" aria-label="RAG and Agents">
+            <div class="spec-card-header">
+              <div class="spec-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <h4 class="spec-card-title">RAG &amp; Agents</h4>
+            </div>
+            <p class="spec-card-tags">ChromaDB · LangChain · GPT-4o</p>
+          </article>
+
+          <article class="spec-card" aria-label="Robotics and ROS2">
+            <div class="spec-card-header">
+              <div class="spec-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M8 8H4a2 2 0 0 0-2 2v8h20v-8a2 2 0 0 0-2-2h-4"/><line x1="12" y1="12" x2="12" y2="20"/></svg>
+              </div>
+              <h4 class="spec-card-title">Robotics / ROS2</h4>
+            </div>
+            <p class="spec-card-tags">EKF · IMU · sensor fusion</p>
+          </article>
+
+          <article class="spec-card" aria-label="Sensor Fusion">
+            <div class="spec-card-header">
+              <div class="spec-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20M12 2v20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07"/></svg>
+              </div>
+              <h4 class="spec-card-title">Sensor Fusion</h4>
+            </div>
+            <p class="spec-card-tags">Kalman · ROS2 · IMU</p>
+          </article>
+
+          <article class="spec-card" aria-label="MLOps and CI/CD">
+            <div class="spec-card-header">
+              <div class="spec-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <h4 class="spec-card-title">MLOps &amp; CI/CD</h4>
+            </div>
+            <p class="spec-card-tags">Docker · GCP · GitHub Actions</p>
+          </article>
+        </div><!-- /col-2 -->
+
+        <!-- Column 3: Tools tag cloud -->
+        <div class="skills-col" aria-label="Tools and technologies">
+          <h3 class="skills-column-title reveal">Tools</h3>
+          <div class="tool-tags" role="list" aria-label="Technology tags">
+            <span class="tool-tag" role="listitem">LangChain</span>
+            <span class="tool-tag" role="listitem">ChromaDB</span>
+            <span class="tool-tag" role="listitem">vLLM</span>
+            <span class="tool-tag" role="listitem">FastAPI</span>
+            <span class="tool-tag" role="listitem">Flask</span>
+            <span class="tool-tag" role="listitem">Docker</span>
+            <span class="tool-tag" role="listitem">Docker Compose</span>
+            <span class="tool-tag" role="listitem">GCP</span>
+            <span class="tool-tag" role="listitem">Azure ML</span>
+            <span class="tool-tag" role="listitem">OpenCV</span>
+            <span class="tool-tag" role="listitem">MLflow</span>
+            <span class="tool-tag" role="listitem">GitHub Actions</span>
+            <span class="tool-tag" role="listitem">Streamlit</span>
+            <span class="tool-tag" role="listitem">Pandas</span>
+            <span class="tool-tag" role="listitem">NumPy</span>
+            <span class="tool-tag" role="listitem">Kalman Filter</span>
+            <span class="tool-tag" role="listitem">EKF</span>
+            <span class="tool-tag" role="listitem">Apache Spark</span>
+            <span class="tool-tag" role="listitem">Hadoop</span>
+            <span class="tool-tag" role="listitem">Jupyter</span>
+            <span class="tool-tag" role="listitem">Gazebo</span>
+            <span class="tool-tag" role="listitem">RViz</span>
+            <span class="tool-tag" role="listitem">CUDA</span>
+            <span class="tool-tag" role="listitem">REST APIs</span>
+            <span class="tool-tag" role="listitem">CI/CD</span>
+            <span class="tool-tag" role="listitem">Linux</span>
+            <span class="tool-tag" role="listitem">Git</span>
+          </div>
+        </div><!-- /col-3 -->
+
+      </div><!-- /skills-grid -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PROJECTS SECTION
+  ═══════════════════════════════════════════════════════ -->
+  <section id="projects" aria-label="Projects">
+    <div class="section-wrapper container">
+
+      <div class="projects-header">
+        <div>
+          <span class="section-label">Projects</span>
+          <h2 class="section-title">Work that ships</h2>
+        </div>
+        <!-- Filter bar -->
+        <nav class="projects-filter" aria-label="Filter projects by category">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="llm">LLM &amp; Agents</button>
+          <button class="filter-btn" data-filter="cv">Computer Vision</button>
+          <button class="filter-btn" data-filter="robotics">Robotics</button>
+          <button class="filter-btn" data-filter="nlp">NLP</button>
+        </nav>
+      </div>
+
+      <!-- Featured project card -->
+      <article class="proj-featured" data-category="llm" aria-label="Featured project: vLLM Inference Server">
+        <div class="proj-featured-arc" aria-hidden="true"></div>
+        <div class="proj-featured-glow" aria-hidden="true"></div>
+
+        <span class="proj-featured-label">Featured · 2026</span>
+        <h3 class="proj-featured-title">vLLM Inference Server</h3>
+        <p class="proj-featured-desc">
+          Industry-grade OpenAI-compatible inference server built on vLLM. Serves Mistral-7B-Instruct with SSE streaming, tensor parallelism across multiple GPUs, and a fully Dockerized deployment pipeline. Production-ready, drop-in replacement for OpenAI endpoints.
+        </p>
+
+        <span class="proj-featured-metric-number">Mistral-7B</span>
+        <span class="proj-featured-metric-label">served at production grade with SSE streaming</span>
+
+        <a
+          href="https://github.com/Abhishek-Sewar"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-outline-accent"
+          aria-label="View vLLM Inference Server on GitHub (opens in new tab)"
+        >
+          View on GitHub →
+        </a>
+      </article>
+
+      <!-- 2×2 project grid -->
+      <div class="projects-grid">
+
+        <!-- QueryBridge -->
+        <article class="proj-card" data-category="nlp" aria-label="Project: QueryBridge">
+          <span class="proj-card-category">NLP</span>
+          <h3 class="proj-card-title">QueryBridge</h3>
+          <p class="proj-card-desc">
+            BERT-powered named entity recognition feeds a structured knowledge graph; T5 seq2seq generates fluent natural-language answers from retrieved triples. Dramatically improves coverage and ranking over keyword baselines.
+          </p>
+          <p class="proj-card-metric">0.61 vs 0.31</p>
+          <p class="proj-card-metric-label">answer coverage · MRR@10: 0.231 vs 0.184</p>
+          <div class="proj-card-tags">
+            <span class="proj-tag">BERT</span>
+            <span class="proj-tag">T5</span>
+            <span class="proj-tag">Knowledge Graph</span>
+            <span class="proj-tag">NER</span>
+          </div>
+        </article>
+
+        <!-- Multimodal Document Intelligence -->
+        <article class="proj-card" data-category="llm" aria-label="Project: Multimodal Document Intelligence">
+          <span class="proj-card-category">LLM &amp; Agents</span>
+          <h3 class="proj-card-title">Multimodal Document Intelligence</h3>
+          <p class="proj-card-desc">
+            GPT-4o vision + Cohere reranking + ChromaDB vector store. Two-stage retrieval pipeline: dense embedding search followed by cross-encoder reranking, enabling precise answers from complex, multi-page documents.
+          </p>
+          <p class="proj-card-metric">Two-Stage</p>
+          <p class="proj-card-metric-label">retrieval with GPT-4o + Cohere reranking</p>
+          <div class="proj-card-tags">
+            <span class="proj-tag">GPT-4o</span>
+            <span class="proj-tag">ChromaDB</span>
+            <span class="proj-tag">Cohere</span>
+            <span class="proj-tag">RAG</span>
+          </div>
+        </article>
+
+        <!-- Audio Anomaly Detection -->
+        <article class="proj-card" data-category="cv" aria-label="Project: Audio Anomaly Detection">
+          <span class="proj-card-category">Computer Vision</span>
+          <h3 class="proj-card-title">Audio Anomaly Detection</h3>
+          <p class="proj-card-desc">
+            Convolutional autoencoder trained on DCASE 2020 machine audio. Reconstruction error thresholding detects anomalous operating conditions. Claude API integration provides real-time diagnostic interpretation of flagged events.
+          </p>
+          <p class="proj-card-metric">0.83 AUROC</p>
+          <p class="proj-card-metric-label">beats DCASE 2020 baseline · Claude API diagnostics</p>
+          <div class="proj-card-tags">
+            <span class="proj-tag">Conv Autoencoder</span>
+            <span class="proj-tag">PyTorch</span>
+            <span class="proj-tag">Claude API</span>
+            <span class="proj-tag">DCASE</span>
+          </div>
+        </article>
+
+        <!-- Vision-Aided State Estimation -->
+        <article class="proj-card" data-category="robotics" aria-label="Project: Vision-Aided State Estimation">
+          <span class="proj-card-category">Robotics</span>
+          <h3 class="proj-card-title">Vision-Aided State Estimation</h3>
+          <p class="proj-card-desc">
+            Extended Kalman Filter fusing IMU accelerometer/gyroscope with visual odometry in ROS2. Multi-sensor fusion reduces drift over dead-reckoning alone, enabling robust localization in GPS-denied environments.
+          </p>
+          <p class="proj-card-metric">EKF Fusion</p>
+          <p class="proj-card-metric-label">IMU + visual odometry · reduced localization drift</p>
+          <div class="proj-card-tags">
+            <span class="proj-tag">EKF</span>
+            <span class="proj-tag">ROS2</span>
+            <span class="proj-tag">IMU</span>
+            <span class="proj-tag">Sensor Fusion</span>
+          </div>
+        </article>
+
+      </div><!-- /projects-grid -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       EXPERIENCE SECTION
+  ═══════════════════════════════════════════════════════ -->
+  <section id="experience" aria-label="Work experience and education">
+    <div class="section-wrapper container">
+
+      <header class="section-header">
+        <span class="section-label">Experience</span>
+        <h2 class="section-title">Where I've applied it</h2>
+      </header>
+
+      <!-- Timeline -->
+      <div class="timeline-wrapper" role="list" aria-label="Work history">
+        <div class="timeline-line" aria-hidden="true"></div>
+
+        <article class="timeline-entry" role="listitem" aria-label="AI/ML/Software Engineer Intern at IMAI Innovations">
+          <div class="timeline-dot" aria-hidden="true"></div>
+
+          <div class="timeline-meta">
+            <span class="timeline-date">Dec 2024 – May 2025</span>
+          </div>
+
+          <h3 class="timeline-company">IMAI Innovations</h3>
+          <p class="timeline-title">AI / ML / Software Engineer Intern</p>
+
+          <ul class="timeline-bullets" aria-label="Key contributions">
+            <li class="timeline-bullet">Deployed production computer vision models (PyTorch + TensorFlow) under variable real-world conditions including lighting changes, partial occlusion, and scale variation</li>
+            <li class="timeline-bullet">Reduced inference latency by <strong>25%</strong> on Google Cloud Run live perception pipelines through model quantization and batching optimization</li>
+            <li class="timeline-bullet">Built Flask REST APIs integrating AI model outputs with downstream business applications, enabling non-technical teams to consume predictions at scale</li>
+            <li class="timeline-bullet">Engineered prompts and fine-tuning strategies for zero-shot and few-shot LLM inference across domain-specific classification tasks</li>
+            <li class="timeline-bullet">Built automated evaluation pipelines tracking Precision, Recall, F1, and AUROC across model versions, enabling regression detection on every deployment</li>
+            <li class="timeline-bullet">Designed Streamlit dashboards surfacing model metrics and business KPIs for both technical and non-technical stakeholders</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Education cards -->
+      <div>
+        <h3 class="section-label" style="margin-bottom: 1.5rem;">Education</h3>
+        <div class="education-grid">
+
+          <article class="edu-card" aria-label="Northeastern University">
+            <h4 class="edu-card-school">Northeastern University</h4>
+            <p class="edu-card-degree">MS Artificial Intelligence</p>
+            <p class="edu-card-meta">2025 – Present &nbsp;·&nbsp; GPA 3.5 / 4.0 &nbsp;·&nbsp; Boston, MA</p>
+            <p class="edu-card-courses">
+              Deep Learning · Transformers &amp; LLMs · Robot Perception · Cloud ML · Responsible AI · Computer Vision
+            </p>
+          </article>
+
+          <article class="edu-card" aria-label="Manipal Institute of Technology">
+            <h4 class="edu-card-school">Manipal Institute of Technology</h4>
+            <p class="edu-card-degree">B.Tech Mechatronics Engineering</p>
+            <p class="edu-card-meta">2020 – 2024 &nbsp;·&nbsp; GPA 3.53 / 4.0 &nbsp;·&nbsp; Manipal, India</p>
+            <p class="edu-card-courses">
+              Machine Vision · Control Theory · Robotics I &amp; II · Digital Signal Processing · Embedded Systems
+            </p>
+          </article>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CONTACT SECTION
+  ═══════════════════════════════════════════════════════ -->
+  <section id="contact" aria-label="Contact">
+    <!-- Background blobs -->
+    <div class="contact-blob contact-blob-1" aria-hidden="true"></div>
+    <div class="contact-blob contact-blob-2" aria-hidden="true"></div>
+
+    <div class="section-wrapper container">
+      <div class="contact-grid">
+
+        <!-- Left: heading + links -->
+        <div class="contact-left">
+          <span class="section-label" style="color: rgba(255,255,255,0.5);">Contact</span>
+          <h2 class="contact-heading">Let's build something remarkable</h2>
+          <p class="contact-subtext">
+            Whether it's a full-time role, research collaboration, or a conversation about AI at the production frontier, I'm always open.
+          </p>
+
+          <div class="contact-links" role="list" aria-label="Contact links">
+            <a
+              href="https://github.com/Abhishek-Sewar"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link-btn"
+              role="listitem"
+              aria-label="GitHub profile (opens in new tab)"
+              style="opacity:1;transform:none;visibility:visible;"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              github.com/Abhishek-Sewar
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/abhishek-sewar-842978380"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link-btn"
+              role="listitem"
+              aria-label="LinkedIn profile (opens in new tab)"
+              style="opacity:1;transform:none;visibility:visible;"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              linkedin.com/in/abhishek-sewar
+            </a>
+
+            <a
+              href="mailto:abhisheksewar2002@gmail.com"
+              class="contact-link-btn"
+              role="listitem"
+              aria-label="Send email"
+              style="opacity:1;transform:none;visibility:visible;"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              abhisheksewar2002@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: contact form -->
+        <div class="contact-right">
+          <form
+            id="contact-form"
+            class="contact-form"
+            action="https://formspree.io/f/mnjobkwy"
+            method="POST"
+            novalidate
+            aria-label="Contact form"
+          >
+            <!-- Name -->
+            <div class="form-field">
+              <label for="contact-name" class="form-label">Name</label>
+              <input
+                type="text"
+                id="contact-name"
+                name="name"
+                class="form-input"
+                placeholder="Your name"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <!-- Email -->
+            <div class="form-field">
+              <label for="contact-email" class="form-label">Email</label>
+              <div class="form-field-suffix" style="position:relative;">
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  class="form-input"
+                  placeholder="your@email.com"
+                  autocomplete="email"
+                  required
+                  style="padding-right: 2.5rem;"
+                />
+                <svg class="form-checkmark" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div class="form-field">
+              <label for="contact-message" class="form-label">Message</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                class="form-textarea"
+                placeholder="Tell me about the role, project, or idea..."
+                required
+                minlength="10"
+              ></textarea>
+              <p class="form-word-count" id="word-count" aria-live="polite">0 words</p>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn-submit" id="submit-btn" disabled aria-disabled="true">
+              Send Message
+            </button>
+
+            <!-- Success message (hidden by default) -->
+            <div class="form-success" id="form-success" role="status" aria-live="polite" aria-atomic="true">
+              <div class="form-success-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <p class="form-success-title">Message sent!</p>
+              <p class="form-success-sub">Thanks for reaching out. I'll get back to you within 24 hours.</p>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-name">Abhishek Sewar</div>
+      <div class="footer-copy">Designed &amp; built with care · 2026</div>
+      <div class="footer-links">
+        <a href="https://github.com/Abhishek-Sewar" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/abhishek-sewar-842978380" target="_blank">LinkedIn</a>
+        <a href="mailto:abhisheksewar2002@gmail.com">Email</a>
+        <a href="#hero" class="footer-top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CONTACT FORM — inline script for fetch submission
+       (kept here as it directly ties to the form element above)
+  ═══════════════════════════════════════════════════════ -->
+  <script>
+    (function ContactFormInit() {
+      'use strict';
+
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+      }
+
+      function countWords(str) {
+        const trimmed = str.trim();
+        if (!trimmed) return 0;
+        return trimmed.split(/\s+/).length;
+      }
+
+      function init() {
+        const form       = document.getElementById('contact-form');
+        const nameInput  = document.getElementById('contact-name');
+        const emailInput = document.getElementById('contact-email');
+        const msgInput   = document.getElementById('contact-message');
+        const submitBtn  = document.getElementById('submit-btn');
+        const wordCount  = document.getElementById('word-count');
+        const successEl  = document.getElementById('form-success');
+        const checkmark  = form.querySelector('.form-checkmark');
+
+        if (!form) return;
+
+        function validate() {
+          const nameOk  = nameInput.value.trim().length > 0;
+          const emailOk = isValidEmail(emailInput.value);
+          const msgOk   = msgInput.value.trim().length >= 10;
+
+          // Email visual feedback
+          if (emailInput.value.length > 0) {
+            emailInput.classList.toggle('valid',   emailOk);
+            emailInput.classList.toggle('invalid', !emailOk);
+            checkmark.classList.toggle('visible',   emailOk);
+          } else {
+            emailInput.classList.remove('valid', 'invalid');
+            checkmark.classList.remove('visible');
+          }
+
+          const allValid = nameOk && emailOk && msgOk;
+          submitBtn.disabled = !allValid;
+          submitBtn.setAttribute('aria-disabled', String(!allValid));
+          submitBtn.classList.toggle('ready', allValid);
+        }
+
+        function updateWordCount() {
+          const words = countWords(msgInput.value);
+          wordCount.textContent = words + (words === 1 ? ' word' : ' words');
+        }
+
+        nameInput.addEventListener('input', validate);
+        emailInput.addEventListener('input', validate);
+        msgInput.addEventListener('input', () => { validate(); updateWordCount(); });
+
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          if (submitBtn.disabled) return;
+
+          submitBtn.textContent = 'Sending…';
+          submitBtn.disabled = true;
+
+          try {
+            const data = new FormData(form);
+            const res  = await fetch(form.action, {
+              method: 'POST',
+              body: data,
+              headers: { 'Accept': 'application/json' }
+            });
+
+            if (res.ok) {
+              form.reset();
+              wordCount.textContent = '0 words';
+              checkmark.classList.remove('visible');
+              emailInput.classList.remove('valid', 'invalid');
+              submitBtn.classList.remove('ready');
+
+              // Show success message
+              Array.from(form.querySelectorAll('.form-field, .btn-submit')).forEach(el => {
+                el.style.display = 'none';
+              });
+              successEl.classList.add('visible');
+            } else {
+              submitBtn.textContent = 'Try again';
+              submitBtn.disabled = false;
+              submitBtn.classList.add('ready');
+            }
+          } catch {
+            submitBtn.textContent = 'Try again';
+            submitBtn.disabled = false;
+            submitBtn.classList.add('ready');
+          }
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCRIPTS (deferred, order: cursor → nav → hero → animations)
+  ═══════════════════════════════════════════════════════ -->
+  <script src="scripts/cursor.js" defer></script>
+  <script src="scripts/nav.js" defer></script>
+  <script src="scripts/hero.js" defer></script>
+  <script src="scripts/animations.js" defer></script>
+
+</body>
+</html>

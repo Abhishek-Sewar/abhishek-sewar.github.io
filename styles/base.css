@@ -1,0 +1,345 @@
+/* ============================================================
+   BASE.CSS — Design tokens, reset, typography, global utilities
+   All CSS variables must be defined here and used across all files
+   ============================================================ */
+
+/* Fonts loaded via <link> tag in index.html (Plus Jakarta Sans) */
+
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+  /* Background palette */
+  --color-bg: #FAFAFA;
+  --color-section-bg: #F1F3F5;
+  --color-card: #FFFFFF;
+  --color-dark: #111111;
+
+  /* Rose accent */
+  --color-accent: #F43F5E;
+  --color-accent-hover: #E11D48;
+  --color-accent-tint: #FFF1F2;
+  --color-accent-muted: rgba(244, 63, 94, 0.10);
+  --color-accent-glow: rgba(244, 63, 94, 0.28);
+
+  /* Typography */
+  --color-text: #0A0A0A;
+  --color-muted: #6B7280;
+  --color-subtle: #9CA3AF;
+  --color-inverse: #FFFFFF;
+  --color-border: #E8EAED;
+  --color-border-subtle: #F4F5F7;
+
+  /* Selection */
+  --color-selection-bg: rgba(244, 63, 94, 0.15);
+  --color-selection-text: #E11D48;
+
+  /* Fonts */
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* Font sizes */
+  --text-xs: 0.75rem;       /* 12px */
+  --text-sm: 0.875rem;      /* 14px */
+  --text-base: 1rem;        /* 16px */
+  --text-lg: 1.125rem;      /* 18px */
+  --text-xl: 1.25rem;       /* 20px */
+  --text-2xl: 1.5rem;       /* 24px */
+  --text-3xl: 1.875rem;     /* 30px */
+  --text-4xl: 2.25rem;      /* 36px */
+  --text-5xl: 3rem;         /* 48px */
+  --text-6xl: 3.75rem;      /* 60px */
+  --text-hero: 6rem;        /* 96px */
+
+  /* Spacing scale */
+  --space-1: 0.25rem;       /* 4px */
+  --space-2: 0.5rem;        /* 8px */
+  --space-3: 0.75rem;       /* 12px */
+  --space-4: 1rem;          /* 16px */
+  --space-5: 1.25rem;       /* 20px */
+  --space-6: 1.5rem;        /* 24px */
+  --space-7: 1.75rem;       /* 28px */
+  --space-8: 2rem;          /* 32px */
+  --space-10: 2.5rem;       /* 40px */
+  --space-12: 3rem;         /* 48px */
+  --space-14: 3.5rem;       /* 56px */
+  --space-16: 4rem;         /* 64px */
+  --space-20: 5rem;         /* 80px */
+  --space-24: 6rem;         /* 96px */
+  --space-28: 7rem;         /* 112px */
+  --space-32: 8rem;         /* 128px */
+
+  /* Border radius */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* Shadows — neutral */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.09), 0 8px 24px rgba(0, 0, 0, 0.05);
+
+  /* Shadows — rose-tinted (for hover states, makes depth feel intentional) */
+  --shadow-accent: 0 0 0 2px var(--color-accent-tint), 0 8px 32px var(--color-accent-glow);
+  --shadow-card-hover: 0 16px 48px rgba(244, 63, 94, 0.07), 0 6px 18px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover-strong: 0 20px 60px rgba(244, 63, 94, 0.12), 0 8px 24px rgba(0, 0, 0, 0.07);
+
+  /* Easing functions */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  /* Durations */
+  --dur-fast: 0.15s;
+  --dur-normal: 0.25s;
+  --dur-medium: 0.4s;
+  --dur-slow: 0.6s;
+  --dur-slower: 0.8s;
+
+  /* Layout */
+  --container-max: 1200px;
+  --nav-height: 68px;
+  --section-padding-y: var(--space-28);
+
+  /* Z-index scale */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-overlay: 100;
+  --z-sticky: 500;
+  --z-nav: 1000;
+  --z-cursor: 9999;
+}
+
+/* ============================================================
+   CSS RESET
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+  font-size: 16px;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Premium selection styling */
+::selection {
+  background-color: var(--color-selection-bg);
+  color: var(--color-selection-text);
+}
+
+::-moz-selection {
+  background-color: var(--color-selection-bg);
+  color: var(--color-selection-text);
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+  font-size: inherit;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+}
+
+p {
+  margin-bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-text);
+  font-feature-settings: 'kern' 1;
+}
+
+/* ============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================ */
+.font-display { font-family: var(--font-display); }
+.font-body    { font-family: var(--font-body); }
+
+.text-xs   { font-size: var(--text-xs); }
+.text-sm   { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-lg   { font-size: var(--text-lg); }
+.text-xl   { font-size: var(--text-xl); }
+.text-2xl  { font-size: var(--text-2xl); }
+.text-3xl  { font-size: var(--text-3xl); }
+
+.font-300 { font-weight: 300; }
+.font-400 { font-weight: 400; }
+.font-500 { font-weight: 500; }
+.font-600 { font-weight: 600; }
+
+.italic { font-style: italic; }
+
+.text-muted   { color: var(--color-muted); }
+.text-accent  { color: var(--color-accent); }
+.text-inverse { color: var(--color-inverse); }
+
+.leading-tight   { line-height: 1.1; }
+.leading-snug    { line-height: 1.3; }
+.leading-normal  { line-height: 1.6; }
+.leading-relaxed { line-height: 1.75; }
+
+/* ============================================================
+   SPACING UTILITIES
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-8);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-inline: var(--space-5);
+  }
+}
+
+/* ============================================================
+   DISPLAY UTILITIES
+   ============================================================ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.relative { position: relative; }
+.overflow-hidden { overflow: hidden; }
+
+/* ============================================================
+   REDUCED MOTION
+   Disables ALL animations globally when user prefers reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   DARK MODE OVERRIDES
+   Overrides only variables that exist in :root above.
+   --color-bg2 and --color-light are not in :root so omitted.
+   ============================================================ */
+body.dark {
+  --color-bg: #0D0D0D;
+  --color-section-bg: #141414;
+  --color-card: #1A1A1A;
+  --color-text: #F0F0F0;
+  --color-muted: #888888;
+  --color-subtle: #555555;
+  --color-border: rgba(255,255,255,0.07);
+  --color-border-subtle: rgba(255,255,255,0.04);
+}
+body.dark nav.scrolled {
+  background: rgba(13,13,13,0.88) !important;
+  border-bottom-color: rgba(255,255,255,0.06) !important;
+}
+body.dark .nav-links a {
+  color: #888888;
+}
+body.dark .nav-links a:hover,
+body.dark .nav-links a.active {
+  color: #F0F0F0;
+}
+body.dark .proj-card,
+body.dark .spec-card,
+body.dark .about-card,
+body.dark .edu-card,
+body.dark .tl-card {
+  background: #1A1A1A !important;
+  border-color: rgba(255,255,255,0.06) !important;
+}
+body.dark .proj-tag,
+body.dark .tag {
+  background: #222222 !important;
+  border-color: rgba(255,255,255,0.08) !important;
+  color: #666666 !important;
+}
+body.dark .skill-bar-track {
+  background: rgba(244,63,94,0.08) !important;
+}
+body.dark .form-input {
+  background: rgba(255,255,255,0.04) !important;
+  border-color: rgba(255,255,255,0.08) !important;
+  color: #F0F0F0 !important;
+}
+body.dark #theme-toggle {
+  border-color: rgba(255,255,255,0.12);
+  color: #F0F0F0;
+}
+body.dark section,
+body.dark .section-wrap {
+  background: transparent;
+}
