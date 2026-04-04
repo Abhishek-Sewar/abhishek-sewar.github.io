@@ -414,9 +414,9 @@
 
     async function send() {
       const text = input.value.trim();
-      if (!text) return;
+      if (!text || isBusy) return;
 
-      // Hidden admin command — must be first, before any message or API call
+      // Hidden admin command — silently store key, never show in chat
       if (text.startsWith('/admin ')) {
         adminKey = text.slice(7).trim();
         input.value = '';
@@ -425,8 +425,6 @@
         appendMessage('bot', '🔓 Override accepted. Hey Abhishek, rate limits? Never heard of them.');
         return;
       }
-
-      if (isBusy) return;
 
       isBusy = true;
       input.value = '';
